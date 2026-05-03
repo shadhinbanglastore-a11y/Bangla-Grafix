@@ -8,8 +8,32 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden py-20 pb-32">
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-600/20 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] -z-10" />
+      {/* Floating Animated Shapes (The "Aircrafts") */}
+      <motion.div 
+        animate={{ 
+          y: [0, -15, 0],
+          rotate: [0, 10, 0],
+          scale: [1, 1.05, 1]
+        }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-20 left-[5%] md:left-[10%] opacity-20 text-orange-500"
+      >
+        <Star size={32} className="md:w-16 md:h-16" fill="currentColor" />
+      </motion.div>
+
+      <motion.div 
+        animate={{ 
+          y: [0, 20, 0],
+          rotate: [0, -15, 0]
+        }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-20 right-[5%] md:right-[15%] opacity-20 text-orange-600"
+      >
+        <Zap size={40} className="md:w-20 md:h-20" fill="currentColor" />
+      </motion.div>
+
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-600/30 rounded-full blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-600/20 rounded-full blur-[120px] -z-10" />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -26,7 +50,7 @@ export const Hero: React.FC = () => {
             <img 
               src="https://www.image2url.com/r2/default/images/1777789492779-ebcf5f7a-624f-4fe7-b206-d2360a28a681.png" 
               alt="Bangla Graphics Logo" 
-              className="h-24 md:h-32 w-auto brightness-110 contrast-110"
+              className="h-24 md:h-32 w-auto brightness-125"
             />
           </div>
         </motion.div>
@@ -45,7 +69,7 @@ export const Hero: React.FC = () => {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-7xl md:text-[12rem] font-display leading-[0.85] uppercase tracking-tighter bg-gradient-to-b from-zinc-900 to-orange-600 dark:from-white dark:to-orange-500 bg-clip-text text-transparent drop-shadow-2xl"
+            className={`text-7xl md:text-9xl lg:text-[12rem] ${useLanguage().language === 'bn' ? 'font-sans font-extrabold' : 'font-display'} leading-[0.85] uppercase tracking-tighter text-zinc-900 dark:text-white drop-shadow-2xl`}
           >
             {t.title}
           </motion.h1>
@@ -54,10 +78,10 @@ export const Hero: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1 }}
           className="max-w-2xl mx-auto mb-16 space-y-6"
         >
-          <p className="text-xl md:text-4xl font-extralight tracking-tight leading-tight text-zinc-900 dark:text-white">
+          <p className="text-xl md:text-3xl lg:text-4xl font-extralight tracking-tight leading-tight text-zinc-800 dark:text-zinc-100">
             {t.subtitle}
           </p>
           <motion.div 

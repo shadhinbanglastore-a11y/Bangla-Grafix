@@ -64,7 +64,7 @@ export const Contact: React.FC = () => {
               </div>
               <div className="text-zinc-900 dark:text-zinc-100">
                 <p className="text-[10px] uppercase font-bold opacity-40 tracking-widest mb-1">{t.facebook}</p>
-                <p className="text-xl md:text-3xl font-bold tracking-tight">Graphics Bangla Official</p>
+                <p className="text-xl md:text-3xl font-bold tracking-tight">Bangla Graphics Official</p>
               </div>
             </motion.a>
 

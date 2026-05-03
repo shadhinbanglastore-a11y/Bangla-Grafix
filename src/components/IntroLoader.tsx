@@ -9,8 +9,8 @@ export const IntroLoader: React.FC<{ onComplete: () => void }> = ({ onComplete }
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
-      setTimeout(onComplete, 800);
-    }, 1800);
+      setTimeout(onComplete, 500);
+    }, 2800);
     return () => clearTimeout(timer);
   }, [onComplete]);
 

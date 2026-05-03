@@ -66,7 +66,7 @@ export default function App() {
             
             <main className="relative">
               {/* Background Moving Circles */}
-              <div className="fixed inset-0 pointer-events-none -zero-10 overflow-hidden">
+              <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
                 <motion.div
                   animate={{ 
                     x: [100, -100, 100],
