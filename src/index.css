@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;800&family=Anek+Bangla:wght@100;300;400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Anek Bangla", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", "Anek Bangla", sans-serif;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0c0c0e;
+  --accent-color: #f97316; 
+}
+
+.dark {
+  --bg-color: #030303;
+  --text-color: #f8fafc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  background: var(--accent-color);
+  color: white;
+  padding: 12px 0;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
+  font-weight: 600;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
